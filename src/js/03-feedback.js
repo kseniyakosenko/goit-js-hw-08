@@ -21,15 +21,11 @@ function storageFormData(e) {
 function onFormSubmit(e) {
     e.preventDefault();
   
-    console.log(formData);
-    
-    const value1 = inputEl ? inputEl.value : '';
-    const value2 = textareaEl ? textareaEl.value : '';
 
-    if (value1 === '' || value2 === '') {
+    if (e.target.elements.email.value === '' || e.target.elements.message.value === '') {
         return alert(`Заповніть всі поля!`);
     }
-
+ console.log(formData);
     
         e.currentTarget.reset();
         localStorage.removeItem(LOCAL_KEY);
